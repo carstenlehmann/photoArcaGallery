@@ -33,8 +33,12 @@ const LogoHeader = () => {
         alt="photoview logo"
       />
       <h1 className="text-3xl text-center mt-4">
-        {t('login_page.welcome', 'Welcome to Photoview')}
+        {t('login_page.welcome', 'Willkommen bei Lehmanns Fotobox Galerie')}
       </h1>
+      <h2 className="text-sm text-gray-600 text-center mt-3">
+        Powered by{' '}
+        <a href="https://github.com/photoview/photoview/">Photoview</a>
+      </h2>
     </div>
   )
 }
@@ -109,7 +113,7 @@ const LoginForm = () => {
         type="submit"
         disabled={loading}
         value={t('login_page.field.submit', 'Sign in') as string}
-        className="rounded-md px-8 py-2 mt-2 focus:outline-none cursor-pointer bg-gradient-to-bl from-[#FF8246] to-[#D6264D] text-white font-semibold focus:ring-2 focus:ring-red-200 disabled:cursor-default disabled:opacity-80"
+        className="rounded-md px-8 py-2 mt-2 focus:outline-none cursor-pointer bg-gradient-to-bl from-[#94d6ec] to-[#1cb274] text-white font-semibold focus:ring-2 focus:ring-red-200 disabled:cursor-default disabled:opacity-80"
       />
       <MessageBox
         message={errorMessage}
@@ -139,7 +143,7 @@ const LoginPage = () => {
   return (
     <>
       <Helmet>
-        <title>{t('title.login', 'Login')} - Photoview</title>
+        <title>{t('title.login', 'Login')} - Lehmanns Fotobox Galerie</title>
       </Helmet>
       {initialSetupData?.siteInfo?.initialSetup && (
         <Redirect to="/initialSetup" />

@@ -53,7 +53,7 @@ export const loadTranslations = () => {
   useEffect(() => {
     const language = data?.myUserPreferences.language
     if (isNil(language)) {
-      i18n.changeLanguage('en')
+      i18n.changeLanguage('de')
       return
     }
 

@@ -98,6 +98,23 @@ const PhotoGallery = ({ mediaState, dispatchMedia }: PhotoGalleryProps) => {
 
   return (
     <>
+      <button
+        title="buy pictures"
+        aria-label="buy pictures"
+        className="rounded-md px-8 py-2 mt-2 focus:outline-none cursor-pointer bg-gradient-to-bl from-[#94d6ec] to-[#1cb274] text-white"
+        onClick={() => {
+          let returnString = '{'
+          mediaState.media.forEach((media, index) => {
+            if (media.favorite) {
+              returnString += media.id + ','
+            }
+          })
+          returnString += '}'
+          location.href = 'https://www.google.de?q=' + returnString
+        }}
+      >
+        Ausgewählte Bilder gedruckt kaufen
+      </button>
       <Gallery data-testid="photo-gallery-wrapper">
         {photoElements}
         <PhotoFiller />

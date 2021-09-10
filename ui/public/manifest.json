@@ -1,6 +1,6 @@
 {
-  "name": "Photoview",
-  "short_name": "Photoview",
+  "name": "Lehmanns Fotobox Galerie",
+  "short_name": "Galerie",
   "description": "Photo gallery for self-hosted personal servers",
   "start_url": "/",
   "display": "standalone",

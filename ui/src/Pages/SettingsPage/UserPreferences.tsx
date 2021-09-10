@@ -18,33 +18,33 @@ import {
 import { myUserPreferences } from './__generated__/myUserPreferences'
 
 const languagePreferences = [
-  { key: 1, label: 'English', flag: 'uk', value: LanguageTranslation.English },
-  { key: 2, label: 'Français', flag: 'fr', value: LanguageTranslation.French },
-  { key: 3, label: 'Svenska', flag: 'se', value: LanguageTranslation.Swedish },
-  { key: 4, label: 'Dansk', flag: 'dk', value: LanguageTranslation.Danish },
-  { key: 5, label: 'Español', flag: 'es', value: LanguageTranslation.Spanish },
-  { key: 6, label: 'polski', flag: 'pl', value: LanguageTranslation.Polish },
-  { key: 7, label: 'Italiano', flag: 'it', value: LanguageTranslation.Italian },
-  { key: 8, label: 'Deutsch', flag: 'de', value: LanguageTranslation.German },
-  { key: 9, label: 'Русский', flag: 'ru', value: LanguageTranslation.Russian },
-  {
-    key: 10,
-    label: '繁體中文',
-    flag: 'zh-HK',
-    value: LanguageTranslation.TraditionalChinese,
-  },
-  {
-    key: 11,
-    label: '简体中文',
-    flag: 'zh-CN',
-    value: LanguageTranslation.SimplifiedChinese,
-  },
-  {
-    key: 12,
-    label: 'Português',
-    flag: 'pt',
-    value: LanguageTranslation.Portuguese,
-  },
+  // { key: 1, label: 'English', flag: 'uk', value: LanguageTranslation.English },
+  // { key: 2, label: 'Français', flag: 'fr', value: LanguageTranslation.French },
+  // { key: 3, label: 'Svenska', flag: 'se', value: LanguageTranslation.Swedish },
+  // { key: 4, label: 'Dansk', flag: 'dk', value: LanguageTranslation.Danish },
+  // { key: 5, label: 'Español', flag: 'es', value: LanguageTranslation.Spanish },
+  // { key: 6, label: 'polski', flag: 'pl', value: LanguageTranslation.Polish },
+  // { key: 7, label: 'Italiano', flag: 'it', value: LanguageTranslation.Italian },
+  { key: 1, label: 'Deutsch', flag: 'de', value: LanguageTranslation.German },
+  // { key: 9, label: 'Русский', flag: 'ru', value: LanguageTranslation.Russian },
+  // {
+  //   key: 10,
+  //   label: '繁體中文',
+  //   flag: 'zh-HK',
+  //   value: LanguageTranslation.TraditionalChinese,
+  // },
+  // {
+  //   key: 11,
+  //   label: '简体中文',
+  //   flag: 'zh-CN',
+  //   value: LanguageTranslation.SimplifiedChinese,
+  // },
+  // {
+  //   key: 12,
+  //   label: 'Português',
+  //   flag: 'pt',
+  //   value: LanguageTranslation.Portuguese,
+  // },
 ]
 
 const CHANGE_USER_PREFERENCES = gql`

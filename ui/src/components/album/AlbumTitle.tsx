@@ -99,18 +99,18 @@ const AlbumTitle = ({ album, disableLink = false }: AlbumTitleProps) => {
         </nav>
         <h1 className="text-2xl truncate min-w-0">{title}</h1>
       </div>
-      {authToken() && (
-        <button
-          title="Album options"
-          aria-label="Album options"
-          className="bg-gray-50 p-2 rounded ml-2 border border-gray-200 focus:outline-none focus:border-blue-300 text-[#8b8b8b] hover:bg-gray-100 hover:text-[#777]"
-          onClick={() => {
-            updateSidebar(<AlbumSidebar albumId={album.id} />)
-          }}
-        >
-          <GearIcon />
-        </button>
-      )}
+      {/*{authToken() && (*/}
+      {/*  <button*/}
+      {/*    title="Album options"*/}
+      {/*    aria-label="Album options"*/}
+      {/*    className="bg-gray-50 p-2 rounded ml-2 border border-gray-200 focus:outline-none focus:border-blue-300 text-[#8b8b8b] hover:bg-gray-100 hover:text-[#777]"*/}
+      {/*    onClick={() => {*/}
+      {/*      updateSidebar(<AlbumSidebar albumId={album.id} />)*/}
+      {/*    }}*/}
+      {/*  >*/}
+      {/*    <GearIcon />*/}
+      {/*  </button>*/}
+      {/*)}*/}
     </div>
   )
 }

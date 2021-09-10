@@ -103,14 +103,14 @@ const AlbumGallery = React.forwardRef(
 
     return (
       <div ref={ref}>
-        {showFilter && (
-          <AlbumFilter
-            onlyFavorites={onlyFavorites}
-            setOnlyFavorites={setOnlyFavorites}
-            setOrdering={setOrdering}
-            ordering={ordering}
-          />
-        )}
+        {/*{showFilter && (*/}
+        {/*  <AlbumFilter*/}
+        {/*    onlyFavorites={onlyFavorites}*/}
+        {/*    setOnlyFavorites={setOnlyFavorites}*/}
+        {/*    setOrdering={setOrdering}*/}
+        {/*    ordering={ordering}*/}
+        {/*  />*/}
+        {/*)}*/}
         <AlbumTitle album={album} disableLink />
         {subAlbumElement}
         <PhotoGallery
