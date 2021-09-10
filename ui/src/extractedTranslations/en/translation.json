@@ -150,7 +150,7 @@
     "user_preferences": {
       "change_language": {
         "description": "Change website language specific for this user",
-        "label": "Website language"
+        "label": "Website zeugs"
       },
       "language_selector": {
         "placeholder": "Select language"

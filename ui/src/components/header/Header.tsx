@@ -25,7 +25,7 @@ const Header = () => {
           Photoview
         </span>
       </h1>
-      {authToken() ? <SearchBar /> : null}
+      {/*{authToken() ? <SearchBar /> : null}*/}
     </div>
   )
 }

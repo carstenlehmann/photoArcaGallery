@@ -46,9 +46,9 @@ const SettingsPage = () => {
         <>
           <ScannerSection />
           <UsersTable />
+          <VersionInfo />
         </>
       )}
-      <VersionInfo />
     </Layout>
   )
 }

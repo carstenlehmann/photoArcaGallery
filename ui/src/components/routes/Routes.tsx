@@ -49,11 +49,11 @@ const Routes = () => {
         <Route path="/share" component={SharePage} />
         <AuthorizedRoute exact path="/albums" component={AlbumsPage} />
         <AuthorizedRoute path="/album/:id" component={AlbumPage} />
-        <AuthorizedRoute path="/photos" component={PhotosPage} />
+        {/*<AuthorizedRoute path="/photos" component={PhotosPage} />*/}
         <AuthorizedRoute path="/places" component={PlacesPage} />
         <AuthorizedRoute path="/people/:person?" component={PeoplePage} />
         <AuthorizedRoute path="/settings" component={SettingsPage} />
-        <Route path="/" exact render={() => <Redirect to="/photos" />} />
+        <Route path="/" exact render={() => <Redirect to="/albums" />} />
         <Route
           render={() => (
             <div>{t('routes.page_not_found', 'Page not found')}</div>

@@ -155,7 +155,7 @@
       "language_selector": {
         "placeholder": "Sprache auswählen"
       },
-      "title": "Persönliche Einstellungen"
+      "title": "Persönliche Einstelungen"
     },
     "users": {
       "add_user": {
@@ -293,12 +293,12 @@
     "people": "Personen",
     "photos": "Fotos",
     "places": "Orte",
-    "settings": "Einstellungen"
+    "settings": "Einstelungen"
   },
   "title": {
     "loading_album": "Lade Album",
     "login": "Login",
     "people": "Personen",
-    "settings": "Einstellungen"
+    "settings": "Einstelungen"
   }
 }

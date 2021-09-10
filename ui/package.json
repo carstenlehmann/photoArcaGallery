@@ -1,11 +1,6 @@
 {
   "name": "photoview-ui",
   "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/photoview/photoview.git",
-    "directory": "ui"
-  },
   "license": "GPL-3.0",
   "description": "UI app for Photoview",
   "dependencies": {
@@ -32,6 +27,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest-dom": "^3.9.0",
     "fs-extra": "^10.0.0",
+    "graphql": "^15.5.3",
     "i18next": "^20.3.2",
     "mapbox-gl": "^2.3.1",
     "postcss": "^7.0.36",
@@ -54,7 +50,7 @@
     "url-join": "^4.0.1"
   },
   "scripts": {
-    "start": "BROWSER=none PORT=1234 craco start",
+    "start": "craco start",
     "build": "craco build",
     "test": "npm run lint && npm run jest -- --watchAll=false",
     "test:ci": "npm run lint && npm run jest:ci",

@@ -31,7 +31,7 @@ module.exports = {
   rules: {
     'no-unused-vars': 'off',
     'react/display-name': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',

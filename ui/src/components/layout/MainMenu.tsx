@@ -79,19 +79,19 @@ export const MainMenu = () => {
   return (
     <div className="fixed w-full bottom-0 lg:bottom-auto lg:top-[84px] z-30 bg-white shadow-separator lg:shadow-none lg:w-[240px] lg:ml-8 lg:mr-5 flex-shrink-0">
       <ul className="flex justify-around py-2 px-2 max-w-lg mx-auto lg:flex-col lg:p-0">
-        <MenuButton
-          to="/photos"
-          exact
-          label={t('sidemenu.photos', 'Timeline')}
-          background="#8ac5f4"
-          activeClasses="ring-[#f1f8ff] bg-[#f1f8ff]"
-          className="outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2"
-          icon={
-            <svg viewBox="0 0 24 24" fill="white">
-              <path d="M5.62503136,14 L9.60031266,17.978 L5.38724257,24 L2.99995461,24 C1.45289603,24 0.179346174,22.8289699 0.0173498575,21.3249546 L5.62503136,14 Z M15.7557572,10 L24.0173027,21.526562 C23.7684095,22.9323278 22.5405695,24 21.0633614,24 L21.0633614,24 L5.88324257,24 L15.7557572,10 Z"></path>
-            </svg>
-          }
-        />
+        {/*<MenuButton*/}
+        {/*  to="/photos"*/}
+        {/*  exact*/}
+        {/*  label={t('sidemenu.photos', 'Timeline')}*/}
+        {/*  background="#8ac5f4"*/}
+        {/*  activeClasses="ring-[#f1f8ff] bg-[#f1f8ff]"*/}
+        {/*  className="outline-none focus:ring-2 focus:ring-blue-200 focus:ring-offset-2"*/}
+        {/*  icon={*/}
+        {/*    <svg viewBox="0 0 24 24" fill="white">*/}
+        {/*      <path d="M5.62503136,14 L9.60031266,17.978 L5.38724257,24 L2.99995461,24 C1.45289603,24 0.179346174,22.8289699 0.0173498575,21.3249546 L5.62503136,14 Z M15.7557572,10 L24.0173027,21.526562 C23.7684095,22.9323278 22.5405695,24 21.0633614,24 L21.0633614,24 L5.88324257,24 L15.7557572,10 Z"></path>*/}
+        {/*    </svg>*/}
+        {/*  }*/}
+        {/*/>*/}
         <MenuButton
           to="/albums"
           exact
