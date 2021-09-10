@@ -42,7 +42,7 @@
   "login_page": {
     "field": {
       "password": "Password",
-      "submit": "Sign in",
+      "submit": "Sign me in!",
       "username": "Username"
     },
     "initial_setup": {
