@@ -15,6 +15,11 @@ import {
 } from './photoGalleryMutations'
 import MediaSidebar from '../sidebar/MediaSidebar'
 import { SidebarContext } from '../sidebar/Sidebar'
+import { Query } from '@apollo/client/react/components'
+import { gql } from '@apollo/client'
+import SidebarDownload from '../sidebar/SidebarDownload'
+import { TranslationFn } from '../../localization'
+import { authToken } from '../../helpers/authentication'
 
 const Gallery = styled.div`
   display: flex;
@@ -46,6 +51,36 @@ type PhotoGalleryProps = {
   dispatchMedia: React.Dispatch<PhotoGalleryAction>
 }
 
+const downloadFile = async (filename: string) => {
+  const response = await fetch(filename, {
+    credentials: 'include',
+  })
+
+  let blob = null
+  blob = await response.blob()
+
+  if (blob == null) {
+    console.log('Blob is null canceling')
+    return
+  }
+  await downloadBlob(blob, filename)
+}
+
+const downloadBlob = async (blob: Blob, filename: string) => {
+  const objectUrl = window.URL.createObjectURL(blob)
+
+  const anchor = document.createElement('a')
+  document.body.appendChild(anchor)
+
+  anchor.href = objectUrl
+  anchor.download = filename
+  anchor.click()
+
+  anchor.remove()
+
+  window.URL.revokeObjectURL(objectUrl)
+}
+
 const PhotoGallery = ({ mediaState, dispatchMedia }: PhotoGalleryProps) => {
   const [markFavorite] = useMarkFavoriteMutation()
 
@@ -73,10 +108,9 @@ const PhotoGallery = ({ mediaState, dispatchMedia }: PhotoGalleryProps) => {
           media={media}
           active={active}
           selectImage={() => {
-            dispatchMedia({
-              type: 'selectImage',
-              index,
-            })
+            if (media.highRes !== null) {
+              downloadFile(media.highRes.url)
+            }
           }}
           clickFavorite={() => {
             toggleFavoriteAction({
