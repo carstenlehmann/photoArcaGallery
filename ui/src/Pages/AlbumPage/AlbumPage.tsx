@@ -91,7 +91,7 @@ function AlbumPage({ match }: AlbumPageProps) {
       mediaOrderBy: orderParams.orderBy,
       mediaOrderDirection: orderParams.orderDirection,
       offset: 0,
-      limit: 200,
+      limit: 500,
     },
   })
 

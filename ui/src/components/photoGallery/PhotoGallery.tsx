@@ -13,13 +13,6 @@ import {
   toggleFavoriteAction,
   useMarkFavoriteMutation,
 } from './photoGalleryMutations'
-import MediaSidebar from '../sidebar/MediaSidebar'
-import { SidebarContext } from '../sidebar/Sidebar'
-import { Query } from '@apollo/client/react/components'
-import { gql } from '@apollo/client'
-import SidebarDownload from '../sidebar/SidebarDownload'
-import { TranslationFn } from '../../localization'
-import { authToken } from '../../helpers/authentication'
 
 const Gallery = styled.div`
   display: flex;
@@ -81,21 +74,26 @@ const downloadBlob = async (blob: Blob, filename: string) => {
   window.URL.revokeObjectURL(objectUrl)
 }
 
+const Button = styled.button`
+  margin-block: 5px;
+  margin-inline-end: 5px;
+`
+
 const PhotoGallery = ({ mediaState, dispatchMedia }: PhotoGalleryProps) => {
   const [markFavorite] = useMarkFavoriteMutation()
 
   const { media, activeIndex, presenting } = mediaState
 
-  const { updateSidebar } = useContext(SidebarContext)
-  useEffect(() => {
-    if (mediaState.activeIndex != -1) {
-      updateSidebar(
-        <MediaSidebar media={mediaState.media[mediaState.activeIndex]} />
-      )
-    } else {
-      updateSidebar(null)
-    }
-  }, [activeIndex])
+  // const { updateSidebar } = useContext(SidebarContext)
+  // useEffect(() => {
+  //   if (mediaState.activeIndex != -1) {
+  //     updateSidebar(
+  //       <MediaSidebar media={mediaState.media[mediaState.activeIndex]} />
+  //     )
+  //   } else {
+  //     updateSidebar(null)
+  //   }
+  // }, [activeIndex])
 
   let photoElements = []
   if (media) {
@@ -130,25 +128,57 @@ const PhotoGallery = ({ mediaState, dispatchMedia }: PhotoGalleryProps) => {
     }
   }
 
+  let favCount: number
+  favCount = 0
+
+  mediaState.media.forEach((media, index) => {
+    if (media.favorite) favCount++
+  })
+
   return (
     <>
-      <button
-        title="buy pictures"
-        aria-label="buy pictures"
-        className="rounded-md px-8 py-2 mt-2 focus:outline-none cursor-pointer bg-gradient-to-bl from-[#94d6ec] to-[#1cb274] text-white"
-        onClick={() => {
-          let returnString = '{'
-          mediaState.media.forEach((media, index) => {
-            if (media.favorite) {
-              returnString += media.id + ','
-            }
-          })
-          returnString += '}'
-          location.href = 'https://www.google.de?q=' + returnString
-        }}
-      >
-        Ausgewählte Bilder gedruckt kaufen
-      </button>
+      {favCount == 0 && (
+        <Button
+          title="buy pictures"
+          aria-label="buy pictures"
+          className="rounded-md px-8 py-2 mt-2 focus:outline-none cursor-pointer bg-gradient-to-bl from-[#94d6ec] to-[#1cb274] text-white"
+        >
+          Alle Bilder gedruckt kaufen ({photoElements.length} Stk.)
+        </Button>
+      )}
+      {favCount > 0 && (
+        <Button
+          title="buy pictures"
+          aria-label="buy pictures"
+          className="rounded-md px-8 py-2 mt-2 focus:outline-none cursor-pointer bg-gradient-to-bl from-[#94d6ec] to-[#1cb274] text-white"
+          onClick={() => {
+            let returnString = '{'
+            mediaState.media.forEach((media, index) => {
+              if (media.favorite) {
+                returnString += media.id + ','
+              }
+            })
+            returnString += '}'
+            location.href = 'https://www.google.de?q=' + returnString
+          }}
+        >
+          Ausgewählte Bilder gedruckt kaufen ({favCount} Stk.)
+        </Button>
+      )}
+      {favCount > 0 && (
+        <Button
+          title="buy pictures"
+          aria-label="buy pictures"
+          className="rounded-md px-8 py-2 mt-2 focus:outline-none cursor-pointer bg-gray-500 text-white"
+          onClick={() => {
+            mediaState.media.forEach((media, index) => {
+              if (media.favorite) toggleFavoriteAction({ media, markFavorite })
+            })
+          }}
+        >
+          Alle abwählen
+        </Button>
+      )}
       <Gallery data-testid="photo-gallery-wrapper">
         {photoElements}
         <PhotoFiller />
