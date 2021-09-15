@@ -139,9 +139,14 @@ const PhotoGallery = ({ mediaState, dispatchMedia }: PhotoGalleryProps) => {
     <>
       {favCount == 0 && (
         <Button
-          title="buy pictures"
-          aria-label="buy pictures"
+          title="buy pictures2"
+          aria-label="buy pictures2"
           className="rounded-md px-8 py-2 mt-2 focus:outline-none cursor-pointer bg-gradient-to-bl from-[#94d6ec] to-[#1cb274] text-white"
+          onClick={() => {
+            location.href =
+              'https://photoarca.test/orderPhotos?photoList=nop' +
+              photoElements.length
+          }}
         >
           Alle Bilder gedruckt kaufen ({photoElements.length} Stk.)
         </Button>
