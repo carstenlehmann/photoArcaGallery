@@ -152,14 +152,22 @@ const PhotoGallery = ({ mediaState, dispatchMedia }: PhotoGalleryProps) => {
           aria-label="buy pictures"
           className="rounded-md px-8 py-2 mt-2 focus:outline-none cursor-pointer bg-gradient-to-bl from-[#94d6ec] to-[#1cb274] text-white"
           onClick={() => {
-            let returnString = '{'
+            let returnString = ''
             mediaState.media.forEach((media, index) => {
               if (media.favorite) {
-                returnString += media.id + ','
+                if (media.highRes !== null) {
+                  returnString +=
+                    media.highRes.url.substring(
+                      media.highRes.url.indexOf('api/photo/') + 10,
+                      media.highRes.url.lastIndexOf('_')
+                    ) +
+                    'a1' +
+                    '+'
+                }
               }
             })
-            returnString += '}'
-            location.href = 'https://www.google.de?q=' + returnString
+            location.href =
+              'https://photoarca.test/orderPhotos?photoList=' + returnString
           }}
         >
           Ausgewählte Bilder gedruckt kaufen ({favCount} Stk.)
