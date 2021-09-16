@@ -147,7 +147,7 @@ const PhotoGallery = ({ mediaState, dispatchMedia }: PhotoGalleryProps) => {
             if (media[0].highRes !== null)
               returnString = media[0].highRes.url.substring(
                 media[0].highRes.url.indexOf('/api/photo/') + 11,
-                media[0].highRes.url.lastIndexOf('n')
+                media[0].highRes.url.indexOf('n')
               )
             location.href =
               'https://photoarca.test/orderPhotos?photoList=' +
