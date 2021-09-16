@@ -143,8 +143,16 @@ const PhotoGallery = ({ mediaState, dispatchMedia }: PhotoGalleryProps) => {
           aria-label="buy pictures2"
           className="rounded-md px-8 py-2 mt-2 focus:outline-none cursor-pointer bg-gradient-to-bl from-[#94d6ec] to-[#1cb274] text-white"
           onClick={() => {
+            let returnString
+            if (media[0].highRes !== null)
+              returnString = media[0].highRes.url.substring(
+                media[0].highRes.url.indexOf('/api/photo/') + 11,
+                media[0].highRes.url.lastIndexOf('n')
+              )
             location.href =
-              'https://photoarca.test/orderPhotos?photoList=nop' +
+              'https://photoarca.test/orderPhotos?photoList=' +
+              returnString +
+              'nop' +
               photoElements.length
           }}
         >
